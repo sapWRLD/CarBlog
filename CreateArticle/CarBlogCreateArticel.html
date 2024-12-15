@@ -9,21 +9,20 @@
 <body>
   <div class="Main_container">
     <h1>Create an Article</h1>
-    <form action="#">
-      <input type="text" placeholder="Article Title" class="input-field" required>
-      <textarea placeholder="Write your article here..." class="textarea" id="textarea" required></textarea>
+    <form action="submit_article.php" method="post" enctype="multipart/form-data">
+      <input type="text" name="title" placeholder="Article Title" class="input-field" required>
+      <textarea name="content" placeholder="Write your article here..." class="textarea" id="textarea" required></textarea>
       <label for="file-upload" class="file-upload">
         Choose File
-        <input type="file" id="file-upload">
+        <input type="file" id="file-upload" name="uploaded_file">
       </label>
       <button type="submit" class="submit-btn">Publish Article</button>
     </form>
     <div class="Media">
       <a class="Media" href="https://www.facebook.com" target="_blank"><img src="assets/facebook.svg" alt="facebook"></a>
       <a class="Media" href="https://www.instagram.com" target="_blank"><img src="assets/Instagram.svg" alt="Instagram"></a>
-      <a class="Media" href="https://www.x.com" target="_blank"><img src="assets/Twitter.svg" alt="Twitter"></a>
+      <a class="Media" href="https://twitter.com" target="_blank"><img src="assets/Twitter.svg" alt="Twitter"></a>
     </div>
   </div>
-  
 </body>
 </html>

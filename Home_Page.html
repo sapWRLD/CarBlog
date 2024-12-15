@@ -12,12 +12,67 @@
         <a target="_blank" href="CreateArticle/CarBlogCreateArticel.html"><button class="Link_button">Create</button></a>
         <a target="_blank" href="CreateArticle/CarBlogCreateArticel.html"><button class="Link_button">News</button></a>
         <a target="_blank" href="CreateArticle/CarBlogCreateArticel.html"><button class="Link_button">View</button></a>
+        <select name="more" id="more">
+            <option value="Cars">Cars</option>
+            <option value="Books">Books</option>
+            <option value="Pictures">Pictures</option>
+            <option value="Events">Events</option>
+        </select>
     </div>
 </header>
 <body>
-    
+    <div class="carousel">
+        <div class="carousel-track">
+          <div class="carousel-item">
+            <h2>Article 1</h2>
+            <p>This is the first article. It provides insightful information on modern technology trends.</p>
+          </div>
+          <div class="carousel-item">
+            <h2>Article 2</h2>
+            <p>This is the second article. Learn about the latest advancements in sustainable energy.</p>
+          </div>
+          <div class="carousel-item">
+            <h2>Article 3</h2>
+            <p>This is the third article. Discover tips on improving productivity in daily life.</p>
+          </div>
+        </div>
+        <div class="carousel-nav">
+          <button class="carousel-button" id="prev">&#8592; Prev</button>
+          <button class="carousel-button" id="next">Next &#8594;</button>
+        </div>
+      </div>
+      
+      <script>
+        const track = document.querySelector('.carousel-track');
+        const items = document.querySelectorAll('.carousel-item');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+      
+        let currentIndex = 0;
+      
+        function updateCarousel() {
+          const offset = -currentIndex * 100;
+          track.style.transform = `translateX(${offset}%)`;
+        }
+      
+        prevButton.addEventListener('click', () => {
+          currentIndex = (currentIndex - 1 + items.length) % items.length;
+          updateCarousel();
+        });
+      
+        nextButton.addEventListener('click', () => {
+          currentIndex = (currentIndex + 1) % items.length;
+          updateCarousel();
+        });
+      
+        // Auto-cycle every 5 seconds
+        setInterval(() => {
+          currentIndex = (currentIndex + 1) % items.length;
+          updateCarousel();
+        }, 5000);
+      </script>
 </body>
 <footer>
-
+    <p>&copy; 2024 | LamboCars | Made by Tom K</p>
 </footer>
 </html>
