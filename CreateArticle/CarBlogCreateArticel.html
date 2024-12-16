@@ -24,7 +24,15 @@
 <body>
   <div class="Main_container">
     <h1>Create an Article</h1>
-    <form action="submit_article.php" method="post" enctype="multipart/form-data">
+    <form action="test.html" method="get">
+      Type of item: 
+      <input type="radio" id="book" name="item" value="Artikel">
+      <label for="book">Artikel</label>
+      <input type="radio" id="book" name="item" value="Car">
+      <label for="book">Car</label>
+      <input type="radio" id="book" name="item" value="Book">
+      <label for="book">Book</label>
+      <input type="text" name="author" placeholder="Author" class="input-field" required>
       <input type="text" name="title" placeholder="Article Title" class="input-field" required>
       <textarea name="content" placeholder="Write your article here..." class="textarea" id="textarea" required></textarea>
       <label for="file-upload" class="file-upload">
