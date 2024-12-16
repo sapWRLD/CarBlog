@@ -4,35 +4,43 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
   }
+body{
+  background: #868686;
+}
 header{
-    background-color: orange;
-    
+  background: linear-gradient(90deg, #000000, #ff8100);
+  color: #eeeeee;
+  margin-bottom: 30px;
 }
 header button{
+  color: #eeeeee;
   padding: 10px;
-  border-radius: 10;
+  border-radius: 10px;
   background: transparent;
   border: none;
   width: 10%;
 }
 header select{
+  color: white;
+  border-radius: 10px ;
   padding: 9px;
   background: transparent;
   border: none;
   width: 10%;
 }
 header button:hover, header select:hover{
-  background-color: #f2f2f2;
+  background-color: gray;
+  opacity: 70%;
 }
 header button:active, header select:active{
-  background-color: #f2f2f2;
+  background-color: #eeeeee;
 }
 a {
   text-decoration: none;
   color: black;
 }
 footer{
-  background-color: orange;
+  background-color: #ff8100;
   position: static;
   font-size: small;
   bottom: 0;
@@ -66,7 +74,10 @@ footer{
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  background-color: #fff;
+  background-color: #eeeeee;
+  img{
+    width: 300px;
+  }
 }
 
 .carousel-track {
@@ -90,7 +101,7 @@ footer{
 .carousel-item p {
   font-size: 16px;
   color: #666;
-}s
+}
 
 .carousel-nav {
   position: absolute;
@@ -103,7 +114,7 @@ footer{
 
 .carousel-button {
   background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
+  color: #eeeeee;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
@@ -115,3 +126,54 @@ footer{
 .carousel-button:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
+.main_artikels{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 1000px;
+  padding: 10px;
+}
+.divartikel{
+  border: 2px solid black;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #eeeeee;
+} article{
+  background-color: #eeeeee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  }.artikel img{
+  padding-right: 10px;
+  border-radius: 10%;
+     }
+h1.logo {
+
+  font-family: Arial Black, Arial Bold, Verdana,sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0 0 0 5px;
+  color: #ff8100;
+}
+span.logo {
+  font-family: Arial, Verdana, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #666666;
+  text-transform: lowercase;
+  padding: 0;
+  margin: 0;
+}
+h2.logo {
+  font-family: Arial, Verdana,sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  color: #666666;
+  padding: 0px;
+  margin: 0 0 0 5px;}

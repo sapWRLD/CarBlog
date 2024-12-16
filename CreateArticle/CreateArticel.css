@@ -6,12 +6,12 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(45deg, #efbf04, #000000);
+  background: linear-gradient(45deg, #ff8100, #000000);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  color: #fff;
+  color: #eeeeee;
 }
 
 .Main_container {
@@ -39,7 +39,7 @@ h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
   text-align: center;
-  background: linear-gradient(90deg, #424242, #ef9104);
+  background: linear-gradient(90deg, #424242, #ff8100);
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -51,7 +51,7 @@ h1 {
   border: none;
   border-radius: 10px;
   background: #2c2c2c;
-  color: #fff;
+  color: #eeeeee;
   font-size: 1rem;
 }
 
@@ -68,7 +68,7 @@ textarea{
 .file-upload {
   display: inline-block;
   background: #1a1a1a;
-  color: #fff;
+  color: #eeeeee;
   padding: 10px 20px;
   border-radius: 10px;
   cursor: pointer;
@@ -88,8 +88,8 @@ textarea{
   width: 100%;
   padding: 10px;
   margin-top: 10px;
-  background: #cb5b11;
-  color: #fff;
+  background: #ff8100;
+  color: #eeeeee;
   border: none;
   border-radius: 10px;
   font-size: 1.1rem;
