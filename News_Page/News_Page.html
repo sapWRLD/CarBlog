@@ -3,79 +3,27 @@
 <head>
     <link href="News.css" rel="stylesheet">
     <meta charset="UTF-8">
-    <title>News</title>
+    <title>LamboMobilia - News</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/headimg.png">
 </head>
-<body>
 <header>
     <div class="Link_items">
-        <a href="/Home_Page.html"><button class="Link_button">Home</button></a>
-        <a href="CreateArticle/CarBlogCreateArticel.html"><button class="Link_button">Create</button></a>
-        <a href="News_Page.html"><button class="Link_button">News</button></a>
-        <a href="CreateArticle/CarBlogCreateArticel.html"><button class="Link_button">View</button></a>
+        <a href="Home_Page.html"><h1 class="logo">lambo<span class="logo">mobilia</span></h1></a>
+        <a target="_blank" href="Home_Page.html"><button class="Link_button">Home</button></a>
+        <a target="_blank" href="News_Page/News_Page.html"><button class="Link_button">News</button></a>
+        <a target="_blank" href="CreateArticle/CarBlogCreateArticel.html"><button class="Link_button">Cars</button></a>
+        <select name="more" id="more">
+            <option value="Cars">Cars</option>
+            <option value="Books">Books</option>
+            <option value="Pictures">Pictures</option>
+            <option value="Events">Events</option>
+        </select>
     </div>
 </header>
-<div class="featured_news">
-    <button class="prev" aria-label="Previous Article">❮</button>
-    <div class="carousel-track-container">
-        <ul class="carousel-track">
-            <li class="carousel-item">
-                <article>
-                    <h2>Article 1</h2>
-                    <img src="assets/placeholderimages.png">
-                    <p>This is the content of Article 1.</p>
-                </article>
-            </li>
-            <li class="carousel-item">
-                <article>
-                    <h2>Article 2</h2>
-                    <img src="assets/placeholderimages.png">
-                    <p>This is the content of Article 2.</p>
-                </article>
-            </li>
-            <li class="carousel-item">
-                <article>
-                    <h2>Article 3</h2>
-                    <img src="assets/placeholderimages.png">
-                    <p>This is the content of Article 3.</p>
-                </article>
-            </li>
-        </ul>
-    </div>
-    <button class="next" aria-label="Next Article">❯</button>
-</div>
-<script>
-    const track = document.querySelector('.carousel-track');
-    const items = Array.from(track.children);
-    const prevButton = document.querySelector('.prev');
-    const nextButton = document.querySelector('.next');
-
-    let currentIndex = 0;
-
-    function updateCarousel(index) {
-        const itemWidth = items[0].getBoundingClientRect().width;
-        track.style.transform = `translateX(-${index * itemWidth}px)`;
-    }
-
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % items.length;
-        updateCarousel(currentIndex);
-    }, 5000);
-
-    nextButton.addEventListener('click', () => {
-        if (currentIndex < items.length - 1) {
-            currentIndex++;
-            updateCarousel(currentIndex);
-        }
-    });
-
-    prevButton.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel(currentIndex);
-        }
-    });
-</script>
+<body>
+    
 </body>
 <footer>
+    <p>&copy; <script>var year = new Date();document.write(year.getFullYear());</script> LAMBOMobilia.com All Rights Reserved. | Made by Tom K</p>
 </footer>
 </html>

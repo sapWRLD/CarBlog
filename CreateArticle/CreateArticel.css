@@ -1,25 +1,90 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   background: linear-gradient(45deg, #ff8100, #000000);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
   color: #eeeeee;
 }
+header{
+  background: linear-gradient(90deg, #000000, #ff8100);
+  color: #eeeeee;
+  margin-bottom: 30px;
+}
+header button{
+  color: #eeeeee;
+  padding: 10px;
+  border-radius: 10px;
+  background: transparent;
+  border: none;
+  width: 10%;
+}
+header select{
+  color: white;
+  border-radius: 10px ;
+  padding: 9px;
+  background: transparent;
+  border: none;
+  width: 10%;
+}
+header button:hover, header select:hover{
+  background-color: gray;
+  opacity: 70%;
+}
+header button:active, header select:active{
+  background-color: #eeeeee;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+footer{
+  margin-top: 20px;
+  background: linear-gradient(90deg, #000000, #ff8100);;
+  position: static;
+  color: #eeeeee;
+  font-size: small;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 1px;
+} 
+
+h1.logo {
+    text-align: left;
+    font-family: Arial Black, Arial Bold, Verdana,sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0 0 0 5px;
+    color: #ff8100;
+  }
+  span.logo {
+    text-align: left;
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #666666;
+    text-transform: lowercase;
+    padding: 0;
+    margin: 0;
+  }
 
 .Main_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 15px;
   padding: 30px;
   width: 100%;
-  max-width: 1000px;
+  max-width: 50%;
   height: 100%;
   max-height: 800px;
 }

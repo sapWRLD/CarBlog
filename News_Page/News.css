@@ -2,70 +2,69 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'arial', sans-serif;
+  }
+body{
+  background: #868686;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 header{
-     background-color: pink;
- }
+  background: linear-gradient(90deg, #000000, #ff8100);
+  color: #eeeeee;
+  margin-bottom: 30px;
+}
 header button{
-    padding: 10px;
-    margin-left: 10px;
-    background: transparent;
-    border: none;
+  color: #eeeeee;
+  padding: 10px;
+  border-radius: 10px;
+  background: transparent;
+  border: none;
+  width: 10%;
 }
-header button:hover{
-    background-color: #f2f2f2;
+header select{
+  color: white;
+  border-radius: 10px ;
+  padding: 9px;
+  background: transparent;
+  border: none;
+  width: 10%;
 }
-header button:active{
-    background-color: #f2f2f2;
+header button:hover, header select:hover{
+  background-color: gray;
+  opacity: 70%;
+}
+header button:active, header select:active{
+  background-color: #eeeeee;
 }
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
-.carousel {
-    position: relative;
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+footer{
+  background: linear-gradient(90deg, #000000, #ff8100);;
+  position: static;
+  color: #eeeeee;
+  font-size: small;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 3px;
 }
+h1.logo {
 
-.carousel-track-container {
-    overflow: hidden;
-    position: relative;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-item {
-    min-width: 100%;
-    box-sizing: border-box;
-    padding: 20px;
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    text-align: center;
-}
-
-button.prev,
-button.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    z-index: 1;
-}
-
-button.prev {
-    left: 10px;
-}
-
-button.next {
-    right: 10px;
-}
+    font-family: Arial Black, Arial Bold, Verdana,sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0 0 0 5px;
+    color: #ff8100;
+  }
+  span.logo {
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #666666;
+    text-transform: lowercase;
+    padding: 0;
+    margin: 0;
+  }
