@@ -26,13 +26,36 @@
     <h1>Create an Article</h1>
     <form action="test.html" method="get">
       Type of item: 
-      <input type="radio" id="book" name="item" value="Artikel">
+      <input type="radio" id="Artikel" name="item" value="Artikel">
       <label for="book">Artikel</label>
-      <input type="radio" id="book" name="item" value="Car">
+      <input type="radio" id="Car" name="item" value="Car">
       <label for="book">Car</label>
       <input type="radio" id="book" name="item" value="Book">
       <label for="book">Book</label>
-      <input type="text" name="author" placeholder="Author" class="input-field" required>
+
+      <div class="hiddencaritems" style="display: none; margin-top: 10px;">
+        <input type="text" name="Madeby" placeholder="MadeBy" class="input-field" id="Car" required>
+        <input type="text" name="Model" placeholder="Model" class="input-field" id="Car" required>
+        <input type="text" name="Price" placeholder="Price" class="input-field" id="Car" required>
+        Recommended?:
+        <input type="radio" id="Yes/no" name="recommended" value="Yes">
+        <label for="Yes/no">Yes</label>
+        <input type="radio" id="Yes/no" name="recommended" value="No">
+        <label for="Yes/no">No</label>
+      </div>
+
+      <div class="hiddenbookitems" style="display: none; margin-top: 10px;" >
+        <input type="text" name="Writenby" placeholder="WritenBy" class="input-field" id="Book" required>
+        <input type="text" name="Pages" placeholder="Pages" class="input-field" id="Book" required>
+        <input type="text" name="Price" placeholder="Price" class="input-field" id="Book" required>
+        Recommended?:
+        <input type="radio" id="BookYes" name="recommended" value="Yes">
+        <label for="BookYes">Yes</label>
+        <input type="radio" id="BookNo" name="recommended" value="No">
+        <label for="BookNo">No</label>
+      </div>
+
+      <input type="text" name="author" placeholder="Author" class="input-field" id="Author" value="Tom K" required>
       <input type="text" name="title" placeholder="Article Title" class="input-field" required>
       <textarea name="content" placeholder="Write your article here..." class="textarea" id="textarea" required></textarea>
       <label for="file-upload" class="file-upload">
@@ -47,6 +70,31 @@
       <a class="Media" href="https://twitter.com" target="_blank"><img src="assets/Twitter.svg" alt="Twitter"></a>
     </div>
   </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      const Artikel = document.getElementById("Artikel");
+      const car = document.getElementById("Car")
+      const book = document.getElementById("book")
+      const hiddencaritems = document.querySelector(".hiddencaritems");
+      const hiddenbookitems = document.querySelector(".hiddenbookitems");
+
+      function toggleExtraItems(){
+        if (car.checked){
+          hiddencaritems.style.display = "block"
+          hiddenbookitems.style.display = "none";
+      } else if (book.checked){
+        hiddenbookitems.style.display = "block"
+        hiddencaritems.style.display = "none";
+      } else {
+        hiddencaritems.style.display = "none"
+        hiddenbookitems.style.display = "none";
+      }
+    }
+    car.addEventListener("change", toggleExtraItems);
+    book.addEventListener("change", toggleExtraItems);
+    Artikel.addEventListener("change", toggleExtraItems);
+  });
+  </script>
 </body>
 <footer>
   <p>&copy; <script>var year = new Date();document.write(year.getFullYear());</script> LAMBOMobilia.com All Rights Reserved. | Made by Tom K</p>
