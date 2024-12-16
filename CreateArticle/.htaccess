@@ -1,4 +1,4 @@
 AuthType Basic
 AuthName "Protected Site"
-AuthUserFile C:\Users\Tom\Documents\.htpasswd
+AuthUserFile C:\Users\Tom\Desktop\projects\HTML_CSS\website\UsersTomDesktopprojectsHTML_CSSwebsite\CreateArticle\.htpasswd
 require valid-user
