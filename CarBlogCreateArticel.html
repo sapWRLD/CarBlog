@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="CreateArticle/CreateArticel.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LamboMobilia - Create</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/headimg.png">
+</head>
+<header>
+  <div class="Link_items">
+      <a href="Home_Page.html"><h1 class="logo">lambo<span class="logo">mobilia</span></h1></a>
+      <a target="_blank" href="Home_Page.html"><button class="Link_button">Home</button></a>
+      <a target="_blank" href="News_Page/News_Page.html"><button class="Link_button">News</button></a>
+      <a target="_blank" href="CreateArticle/CarBlogCreateArticel.html"><button class="Link_button">Cars</button></a>
+      <select name="more" id="more">
+          <option value="Cars">Cars</option>
+          <option value="Books">Books</option>
+          <option value="Pictures">Pictures</option>
+          <option value="Events">Events</option>
+      </select>
+  </div>
+</header>
+<body>
+  <div class="Main_container">
+    <h1>Create an Article</h1>
+    <form id="article-form" action="http://localhost:3000/submit-article" method="post" enctype="multipart/form-data">
+      <!-- Radio Buttons -->
+      Type of item: 
+      <input type="radio" id="Artikel" name="item" value="Artikel" checked>
+      <label for="Artikel">Artikel</label>
+      <input type="radio" id="Car" name="item" value="Car">
+      <label for="Car">Car</label>
+      <input type="radio" id="Book" name="item" value="Book">
+      <label for="Book">Book</label>
+
+      <!-- Hidden Car Items -->
+      <div class="hiddencaritems" style="display: none; margin-top: 10px;">
+        <input type="text" name="Madeby" placeholder="MadeBy" class="input-field" id="Car" >
+        <input type="text" name="Model" placeholder="Model" class="input-field" id="Car" >
+        <input type="text" name="Price" placeholder="Price" class="input-field" id="Car" >
+        Recommended?:
+        <input type="radio" id="CarYes" name="recommended_car" value="Yes">
+        <label for="CarYes">Yes</label>
+        <input type="radio" id="CarNo" name="recommended_car" value="No">
+        <label for="CarNo">No</label>
+        <button type="button" class="clearbutton" onclick="clearcontent()">clear</button>
+        <input type="text" name="author" placeholder="Author" class="input-field" id="Author" value="Tom K" >
+        <input type="text" name="title" placeholder="Review Title" class="input-field">
+        <textarea name="content" placeholder="Write your review here..." class="textarea" id="textarea"></textarea>
+      </div>
+
+      <!-- Hidden Book Items -->
+      <div class="hiddenbookitems" style="display: none; margin-top: 10px;">
+        <input type="text" name="Writenby" placeholder="WritenBy" class="input-field" id="Book">
+        <input type="text" name="ISNB" placeholder="ISNB Nummer" class="input-field" id="Book">
+        <input type="text" name="Pages" placeholder="Pages" class="input-field" id="Book">
+        <input type="text" name="Price" placeholder="Price" class="input-field" id="Book">
+        Recommended?:
+        <input type="radio" id="BookYes" name="recommended" value="Yes">
+        <label for="BookYes">Yes</label>
+        <input type="radio" id="BookNo" name="recommended" value="No">
+        <label for="BookNo">No</label>
+        <button type="button" class="clearbutton" onclick="clearcontent()">clear</button>
+        <input type="text" name="author" placeholder="Author" class="input-field" id="Author" value="Tom K">
+        <input type="text" name="title" placeholder="Review Title" class="input-field" >
+        <textarea name="content" placeholder="Write your review here..." class="textarea" id="textarea"></textarea>
+      </div>
+
+      <!-- Article Items -->
+      <div class="hiddenarticleitems">
+        <input type="text" name="author" placeholder="Author" class="input-field" id="Author" value="Tom K">
+        <input type="text" name="title" placeholder="Article Title" class="input-field" >
+        <textarea name="content" placeholder="Write your article here..." class="textarea" id="textarea"></textarea>
+      </div>
+
+      <!-- File Upload -->
+      <label for="file-upload" class="file-upload">
+        Choose File
+        <input type="file" id="file-upload" name="uploaded_file">
+      </label>
+
+      <button type="submit" class="submit-btn">Publish Article</button>
+    </form>
+
+    <!-- Social Media Links -->
+    <div class="Media">
+      <a class="Media" href="https://www.facebook.com" target="_blank"><img src="CreateArticle/assets/facebook.svg" alt="facebook"></a>
+      <a class="Media" href="https://www.instagram.com" target="_blank"><img src="CreateArticle/assets/Instagram.svg" alt="Instagram"></a>
+      <a class="Media" href="https://twitter.com" target="_blank"><img src="CreateArticle/assets/Twitter.svg" alt="Twitter"></a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      const form = document.getElementById("article-form");
+      const Artikel = document.getElementById("Artikel");
+      const car = document.getElementById("Car");
+      const book = document.getElementById("Book");
+      const hiddencaritems = document.querySelector(".hiddencaritems");
+      const hiddenbookitems = document.querySelector(".hiddenbookitems");
+      const hiddenarticleitems = document.querySelector(".hiddenarticleitems");
+
+      // Handle Form Data Submission using Fetch API
+      form.addEventListener('submit', async function(event) {
+        event.preventDefault(); // Prevent default form submission
+        
+        const formData = new FormData(form);
+        
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData
+          });
+
+          if (response.ok) {
+            alert('Article submitted successfully!');
+            form.reset(); // Reset the form
+          } else {
+            alert('Error submitting article. Please try again.');
+          }
+        } catch (error) {
+          alert('Error: ' + error.message);
+        }
+      });
+
+      // Show/Hide Form Elements Based on Selected Item Type
+      function toggleExtraItems() {
+        if (car.checked) {
+          hiddencaritems.style.display = "block";
+          hiddenbookitems.style.display = "none";
+          hiddenarticleitems.style.display = "none";
+        } else if (book.checked) {
+          hiddenbookitems.style.display = "block";
+          hiddencaritems.style.display = "none";
+          hiddenarticleitems.style.display = "none";
+        } else {
+          hiddencaritems.style.display = "none";
+          hiddenbookitems.style.display = "none";
+          hiddenarticleitems.style.display = "block";
+        }
+      }
+
+      // Attach change event listeners
+      car.addEventListener("change", toggleExtraItems);
+      book.addEventListener("change", toggleExtraItems);
+      Artikel.addEventListener("change", toggleExtraItems);
+    });
+
+    // Clear selected radio buttons (for both "Book" and "Car")
+    function clearcontent() {
+      const bookRadios = document.querySelectorAll('input[name="recommended"]');
+      const carRadios = document.querySelectorAll('input[name="recommended_car"]');
+
+      bookRadios.forEach(radio => radio.checked = false);
+      carRadios.forEach(radio => radio.checked = false);
+    }
+  </script>
+</body>
+
+<footer>
+  <p>&copy; <script>var year = new Date();document.write(year.getFullYear());</script> LAMBOMobilia.com All Rights Reserved. | Made by Tom K</p>
+</footer>
+
+</html>
