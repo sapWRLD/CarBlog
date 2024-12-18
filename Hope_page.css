@@ -46,7 +46,7 @@ header li a:hover, header select:hover{
   background-color: gray;
   opacity: 70%;
 }
-header button:active, header select:active{
+header select:active{
   background-color: #eeeeee;
 }
 a {
