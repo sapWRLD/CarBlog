@@ -13,23 +13,36 @@ header{
   color: #eeeeee;
   margin-bottom: 30px;
 }
-header button{
-  color: #eeeeee;
-  padding: 10px;
-  border-radius: 10px;
+header ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
   background: transparent;
   border: none;
-  width: 10%;
+}
+header li {
+  display: inline-block;
+  border-radius: 10px;
+}
+header li a {
+  display: block;
+  color: #eeeeee;
+  text-align: center;
+  margin-top: 5px;
+  padding: 10px 50px 10px;
+  border-radius: 10px;
 }
 header select{
   color: white;
+  font-size: medium;
   border-radius: 10px ;
-  padding: 9px;
+  padding: 10px 50px 10px;
   background: transparent;
   border: none;
   width: 10%;
 }
-header button:hover, header select:hover{
+header li a:hover, header select:hover{
   background-color: gray;
   opacity: 70%;
 }
